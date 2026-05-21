@@ -8,8 +8,7 @@ epoch = int(sys.argv[2])
 date = sys.argv[3]
 member = sys.argv[4]
 
-# dir_output = f"/work/nvme/bduu/yanie/regional-ai/inference/STRETCHED-6km/outputs/ENS/{version}/epoch{epoch}/{date}/"  # old
-dir_output = f"/work/nvme/bduu/yanie/regional-ai/inference/STRETCHED-6km/outputs/ENS/{version}/{date}/epoch{epoch}/"
+dir_output = f"/path/to/output/"
 os.chdir(dir_output)
 
 variables = '2t,ivt_u,ivt_v,tp,latitude,longitude'   # ,iwv,z_500
