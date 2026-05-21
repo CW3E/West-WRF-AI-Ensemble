@@ -38,10 +38,7 @@ for date in date_list:
     for version in versions:
         dir_out = dir_root+f"forecasts/STRETCHED-6km/outputs/ENS/{version}/epoch{epoch}/{date}/"
         # dir_in = dir_out 
-        if date <= "20231108":
-            dir_in = f"/path/to/original_outputs/{version}/epoch{epoch}/{date}/"  # to be changed (order of epoch and date)
-        else:
-            dir_in = f"/path/to/original_outputs/{version}/{date}/epoch{epoch}/"  
+        dir_in = f"/path/to/original_outputs/{version}/{date}/epoch{epoch}/"  
         os.makedirs(dir_out, exist_ok=True) 
 
         print(f"Interpolating tp for B2-{version}-epoch{epoch} initialized on {date}.")

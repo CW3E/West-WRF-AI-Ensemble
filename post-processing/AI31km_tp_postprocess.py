@@ -24,7 +24,7 @@ date_range = pd.date_range(start=start_date, end=end_date, freq='D')
 date_list = date_range.strftime('%Y%m%d').tolist()
 
 ## PRISM
-dir_prism = "/cw3e/mead/projects/cwp179/ONR/data/PRISM/"
+dir_prism = "/path/to/PRISM/"
 lats = np.load(dir_prism+"latsCoords_2kmDomain.npy")
 lons = np.load(dir_prism+"lonsCoords_2kmDomain.npy")  # -180-180
 lat_min = 30 # lats.min()
@@ -38,11 +38,7 @@ lon_grid, lat_grid = np.meshgrid(lons, lats)  # to be interpolated to
 for date in date_list: 
     for version in versions:
         dir_out = dir_root+f"forecasts/GLOBAL-31km/outputs/ENS/{version}/epoch{epoch}/{date}/"
-        # dir_in = dir_out 
-        if date <= "20231108":
-            dir_in = f"/cw3e/mead/projects/cwp179/ONR/forecasts/original_outputs/{version}/epoch{epoch}/{date}/"  # to be changed (order of epoch and date)
-        else:
-            dir_in = f"/cw3e/mead/projects/cwp179/ONR/forecasts/original_outputs/{version}/{date}/epoch{epoch}/"  
+        dir_in = f"/path/to/original_outputs/{version}/{date}/epoch{epoch}/"
         os.makedirs(dir_out, exist_ok=True) 
 
         print(f"Interpolating tp for A2-{version}-epoch{epoch} initialized on {date}.")
