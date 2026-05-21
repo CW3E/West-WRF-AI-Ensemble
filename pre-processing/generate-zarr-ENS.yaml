@@ -1,0 +1,28 @@
+dates:
+  start: 2025-01-01T00:00:00  # change
+  end: 2025-01-01T06:00:00  # change
+  frequency: 6h
+
+# statistics:
+#   start: 2016
+#   end: 2020
+
+input:
+  join:
+  - netcdf: {path: [/cw3e/mead/projects/cwp179/ONR/data/ENS/netcdf/2025-01-01_06/ENS_31km_20250101_0.nc,  # 31 or 6, change
+                    ]}             
+  - forcings:
+      template: ${input.join.0.netcdf}
+      param:
+      - insolation
+      - cos_julian_day
+      - cos_local_time
+      - cos_longitude
+      - cos_latitude
+      - sin_julian_day
+      - sin_local_time
+      - sin_longitude
+      - sin_latitude
+      
+
+
