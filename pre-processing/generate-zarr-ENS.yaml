@@ -9,7 +9,7 @@ dates:
 
 input:
   join:
-  - netcdf: {path: [/cw3e/mead/projects/cwp179/ONR/data/ENS/netcdf/2025-01-01_06/ENS_31km_20250101_0.nc,  # 31 or 6, change
+  - netcdf: {path: [/path/to/netcdf/2025-01-01_06/ENS_31km_20250101_0.nc,  # 31 or 6, change
                     ]}             
   - forcings:
       template: ${input.join.0.netcdf}
